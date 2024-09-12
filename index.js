@@ -7,11 +7,9 @@ const connectDB = require("./database/db.js");
 require('dotenv').config();
 
 const app = express();
-app.use(cors( {
-    origin: "https://mernbookclient.netlify.app",
-    allowedHeaders: ["content-type", "Authorization"],
-    credentials: true,
-}));
+app.use(cors( 
+    "*"
+));
 app.use(express.json());
 
 app.use('/api/books', bookRoutes);
